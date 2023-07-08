@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <p>Are u sure u want to delete "{{ tool.name }}"</p>
+    <form method="POST">
+        {% csrf_token %}
+        <a class="btn btn-info" href="{% url 'display_tool' %}">Cancel</a>
+        <input class="btn btn-danger" type="submit" name="Delete">
+    </form>
+
+{% endblock content %}
