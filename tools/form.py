@@ -6,10 +6,10 @@ class ToolForm(forms.ModelForm):
     class Meta:
         model = Tool
         fields = [
-            'name',
-            # 'image',
+            'tool_name',
+            'image',
             'price',
             'token',
-            # 'upload_tool',
+            'upload_tool',
             'quantity',
         ]

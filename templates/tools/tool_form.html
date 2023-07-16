@@ -2,37 +2,37 @@
 {% load static %}
 
 {% block content %}
-    <form class="form-box" action="" method="POST">
+    <form class="form-box box-login-register-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container">
-            {{ form.as_p }}
-            {% comment %} <div class="form-outline">
-                <input type="text" id="id_name" class="form-control" name="name" required/>
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            <div class="form-outline">
+                <input type="text" id="id_name" class="form-control" name="tool_name" value="{% if form.tool_name.value %}{{ form.tool_name.value }}{% endif %}" required/>
                 <label class="form-label" for="id_name">Name</label>
             </div>
             <div class="form-outline">
-                <input type="number" id="id_price" class="form-control" name="price" required/>
+                <input type="number" id="id_price" class="form-control" name="price" value="{% if form.price.value %}{{ form.price.value }}{% endif %}" required/>
                 <label class="form-label" for="id_price">Price</label>
             </div>
             <div class="form-outline">
-                <input type="text" id="id_token" class="form-control" name="token" required/>
+                <input type="text" id="id_token" class="form-control" name="token" value="{% if form.token.value %}{{ form.token.value }}{% endif %}" required/>
                 <label class="form-label" for="id_token">Token</label>
             </div>
             <div class="form-outline">
-                <input type="number" id="id_quantity" class="form-control" name="quantity" required/>
+                <input type="number" id="id_quantity" class="form-control" name="quantity" value="{% if form.quantity.value %}{{ form.quantity.value }}{% endif %}" required/>
                 <label class="form-label" for="id_quantity">Quantity</label>
-            </div> {% endcomment %}
-            {% comment %} <div class="form-upload">
+            </div> 
+            <div class="form-upload">
                 <label class="form-label" for="id_image">Image:</label>
-                <input type="file" class="form-control" id="id_image" name="image" required/>
+                <input type="file" class="form-control" id="id_image" name="image" value="{% if form.image.value %}{{ form.image.value }}{% endif %}" required/>
             </div>
             <div class="form-upload">
                 <label class="form-label" for="id_upload_tool">Upload tool:</label>
-                <input type="file" class="form-control" id="id_upload_tool" name="upload_tool" required/>
-            </div> {% endcomment %}
+                <input type="file" class="form-control" id="id_upload_tool" name="upload_tool" value="{% if form.upload_tool.value %}{{ form.upload_tool.value }}{% endif %}" required/>
+            </div> 
             <!-- btn -->
             <div class="buttons">
-                <input type="submit" class="btn btn-dark" name="Submit"/>
+                <input type="submit" class="btn btn-success" name="Submit"/>
                 <input type="reset" class="btn btn-danger" value="Reset">
             </div>
         </div>

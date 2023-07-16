@@ -5,5 +5,5 @@ from .models import Tool
 
 @admin.register(Tool)
 class toolAdmin(admin.ModelAdmin):
-    fields = ['name', 'image', 'username', 'price', 'upload_tool', 'quantity', 'token']
+    # fields = ['tool_name', 'image', 'username', 'price', 'upload_tool', 'quantity', 'token','purchased_by']
     search_fields = ['name', 'token']

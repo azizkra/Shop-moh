@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS =  ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -28,7 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'tools.apps.ToolsConfig'
+    'tools.apps.ToolsConfig',
+    'account.apps.AccountConfig',
+    
+    # 'social_django',
+    # 'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +119,15 @@ STATIC_ROOT = 'staticfiles/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_URL = 'account/login_view/'
+
+# Email server configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'azizkrayyem7@gmail.com'
+EMAIL_HOST_PASSWORD = 'azizkrayyem1234567890@@'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

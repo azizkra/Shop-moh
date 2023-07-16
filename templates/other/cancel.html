@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylecss %}
+    <link rel="stylesheet" href="{% static 'css/succsess.css' %}">
+{% endblock stylecss %}
+
+
+{% block content %}
+        <!-- start cancel -->
+
+        <div class="box">
+            <div class="error alert">
+                <div class="alert-body">
+                    Error !
+                </div>
+            </div>
+        </div>
+
+        <!-- end cancel -->
+{% endblock content %}

@@ -1,6 +1,6 @@
 
 <!-- Start search -->
-<div class="container">
+{% comment %} <div class="container">
     <div class="input-group search">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" />
@@ -10,5 +10,15 @@
             <i class="fas fa-search"></i>
         </button>
     </div>
-</div>
+</div> {% endcomment %}
+
+<div class="container"> 
+    <form method="GET" action="{% url 'search_tool' %}">
+        <div class="input-group">
+            <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-primary">search</button>
+        </div>
+    </form>
+</div> 
+
 <!-- End search -->
