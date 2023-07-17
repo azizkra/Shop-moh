@@ -1,5 +1,5 @@
 import os
-import django_heroku
+# import django_heroku
 import dj_database_url
 from decouple import config
 
@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS =  ['.vercel.app']
 
 
 # Application definition
@@ -144,4 +144,4 @@ EMAIL_USE_TLS = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
