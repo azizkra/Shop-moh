@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['.vercel.app']
+ALLOWED_HOSTS =  ['*']
 
 
 # Application definition
@@ -82,6 +82,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'PASSWORD': 'azizkrayyem1234567890@@',
+#         'USER': 'postgres',
+#         'HOST': 'containers-us-west-196.railway.app',
+#         'PORT': '6625',
+#     }
+# }
 
 
 # Password validation
@@ -122,7 +132,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = 'staticfiles/'
+STATIC_ROOT ='staticfiles/'
 # for static files in Globale
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
