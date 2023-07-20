@@ -114,13 +114,13 @@ def Coinbase_Payment(request, *args, **kwargs):
     if product_info:
         product_info = product_info[0]
         price = product_info.price
-        user = request.user.email
+        # user = request.user.email
         api_key = 'f0cecb79-a4b2-436f-a131-b215cbe6fd44'
         url = 'https://api.commerce.coinbase.com/charges'
         
         data['meta_data'] = {
             'id': id,
-            'customer': user
+            # 'customer': user
         }
         data['name'] = f'Buy {product_name} With {price}'
         data['description'] = 'Sellix Shop'

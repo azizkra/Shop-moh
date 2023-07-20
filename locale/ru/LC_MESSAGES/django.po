@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 20:56+0000\n"
+"POT-Creation-Date: 2023-07-20 20:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,384 +16,378 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 #: account/form.py:8 account/form.py:12 account/form.py:16
 msgid "required field"
-msgstr "الحقل مطلوب"
+msgstr "Обязательное поле"
 
 #: account/form.py:9
 msgid "Username must be at least 4 characters long."
-msgstr "يجب أن يتكون اسم المستخدم من 4 أحرف على الأقل."
+msgstr "Имя пользователя должно содержать не менее 4 символов."
 
 #: account/form.py:13
 msgid "Enter a valid email."
-msgstr "أدخل بريد إلكتروني صالح."
+msgstr "Введите действительный адрес электронной почты."
 
 #: account/form.py:17
 msgid "Password must be at least 8 characters long."
-msgstr "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
+msgstr "Пароль должен быть не менее 8 символов."
 
 #: account/form.py:36
 msgid "Passwords do not match."
-msgstr "كلمة المرور غير مطابقة."
+msgstr "Пароли не совпадают."
 
 #: account/form.py:42
 msgid "There is a registered username with this name."
-msgstr "يوجد اسم مستخدم مسجل بهذا الاسم."
+msgstr "Существует зарегистрированный пользователь c этим именем."
 
 #: account/form.py:48
 msgid "This email is already registered."
-msgstr "عنوان البريد الإلكترونى هذا مسجل بالفعل."
+msgstr "Этот адрес уже зарегистрирован."
 
 #: account/views.py:30
 msgid "Registration successfully you can now login-in"
-msgstr "لقد سجلت بنجاح يمكنك الآن تسجيل الدخول"
+msgstr "Регистрация прошла успешно, теперь вы можете войти в систему"
 
 #: account/views.py:33
 msgid "Something error, try again later"
-msgstr "خطأ ما ، حاول مرة أخرى في وقت لاحق"
+msgstr "Произошла ошибка, повторите попытку позже"
 
 #: account/views.py:53
 msgid "Login-in successfully"
-msgstr "تسجيل الدخول بنجاح"
+msgstr "Войти успешно"
 
 #: account/views.py:56
 msgid "Invalid username or password"
-msgstr "خطأ في اسم المستخدم أو كلمة مرور"
+msgstr "неправильное имя пользователя или пароль"
 
 #: account/views.py:70
 msgid "Updating profile successfully"
-msgstr "تحديث الملف الشخصي بنجاح"
+msgstr "Обновление профиля успешно"
 
 #: account/views.py:72
 msgid "Somthing want wrong"
-msgstr "هناك خطأ ما"
+msgstr "Что-то пошло не так"
 
 #: account/views.py:93
 msgid "Your password changed successfully"
-msgstr "تم تغيير كلمة المرور الخاصة بك بنجاح"
+msgstr "Ваш пароль успешно изменен"
 
 #: account/views.py:103
 msgid "See you ^_^"
-msgstr "أراك ^ _ ^"
+msgstr "Увидимся ^_^"
 
 #: account/views.py:122
 msgid "Your message sent successfully"
-msgstr "تم إرسال رسالتك بنجاح"
+msgstr "Ваше сообщение успешно отправлено"
 
 #: account/views.py:155
 msgid ".exe file not found"
-msgstr "ملف exe. غير موجود"
+msgstr ".exe файл не найден"
 
 #: account/views.py:169
 msgid "You do not have permission to download this tool."
-msgstr "ليس لديك إذن لتنزيل هذه الأداة."
+msgstr "У вас нет разрешения на загрузку этого инструмента."
 
 #: mysite/settings.py:181
 msgid "English"
-msgstr "الانكليزية"
+msgstr "Английский"
 
 #: mysite/settings.py:182
 msgid "Arabic"
-msgstr "العربية"
+msgstr "арабский"
 
 #: mysite/settings.py:183
 msgid "Türkiye"
-msgstr ""
+msgstr "Турция"
 
 #: mysite/settings.py:184
 msgid "Russia"
-msgstr ""
+msgstr "Россия"
 
 #: theme/templates/base_theme.html:46
 msgid "E-commerce solution powered by"
-msgstr ""
+msgstr "Решение для электронной коммерции на базе"
 
 #: theme/templates/other/cancel.html:16
 msgid "The process is not over"
-msgstr ""
+msgstr "Процесс не окончен"
 
 #: theme/templates/other/navbar.html:33
 msgid "Profile"
-msgstr ""
+msgstr "Профиль"
 
 #: theme/templates/other/navbar.html:35
 msgid "Add new tool"
-msgstr ""
+msgstr "Добавить новый инструмент"
 
 #: theme/templates/other/navbar.html:37
 msgid "Change password"
-msgstr ""
+msgstr "Изменить пароль"
 
 #: theme/templates/other/navbar.html:38
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 #: theme/templates/other/navbar.html:41
 msgid "Login"
-msgstr ""
+msgstr "Авторизоваться"
 
 #: theme/templates/other/navbar.html:42
 #: theme/templates/registration/login.html:46
 msgid "Register"
-msgstr ""
+msgstr "регистр"
 
 #: theme/templates/other/search.html:8
 msgid "search"
-msgstr ""
+msgstr "поиск"
 
 #: theme/templates/other/success.html:16
 msgid "Success"
-msgstr ""
+msgstr "Успех"
 
 #: theme/templates/other/topnav.html:6
 msgid "Product"
-msgstr "النتج"
+msgstr "Продукт"
 
 #: theme/templates/other/topnav.html:7
 msgid "Contact"
-msgstr "اتصال"
+msgstr "Контакт"
 
 #: theme/templates/other/topnav.html:8
 msgid "Feedback"
-msgstr "تعليق"
+msgstr "Обратная связь"
 
 #: theme/templates/other/topnav.html:9
 msgid "Terms"
-msgstr "شروط"
+msgstr "Условия"
 
 #: theme/templates/other/topnav.html:10
 msgid "About"
-msgstr "من نحن"
+msgstr "О нас"
 
 #: theme/templates/other/topnav.html:11
 msgid "Affiliate Program"
-msgstr "إنضم لبرنامج"
+msgstr "Партнерская программа"
 
 #: theme/templates/registration/change_password.html:7
-#, fuzzy
-#| msgid "Invalid username or password"
 msgid "Change your password"
-msgstr "خطأ في اسم المستخدم أو كلمة مرور"
+msgstr "Измените свой пароль"
 
 #: theme/templates/registration/change_password.html:14
 msgid "Current password"
-msgstr ""
+msgstr "Текущий пароль"
 
 #: theme/templates/registration/change_password.html:20
 msgid "New password"
-msgstr ""
+msgstr "Новый пароль"
 
 #: theme/templates/registration/change_password.html:26
 msgid "Repat password"
-msgstr ""
+msgstr "Повторить пароль"
 
 #: theme/templates/registration/change_password.html:30
 msgid "Reset password"
-msgstr ""
+msgstr "Сброс пароля"
 
 #: theme/templates/registration/contact.html:10
-#, fuzzy
-#| msgid "Contact"
 msgid "Contact us"
-msgstr "اتصال"
+msgstr "Связаться с нами"
 
 #: theme/templates/registration/contact.html:17
 #: theme/templates/tools/tool_form.html:13
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: theme/templates/registration/contact.html:23
 #: theme/templates/registration/register.html:25
 msgid "Email address"
-msgstr ""
+msgstr "Адрес электронной почты"
 
 #: theme/templates/registration/contact.html:29
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: theme/templates/registration/contact.html:34
 msgid "Send"
-msgstr ""
+msgstr "Отправлять"
 
 #: theme/templates/registration/edit_profile.html:33
 msgid "number of purchased tools"
-msgstr ""
+msgstr "количество купленных инструментов"
 
 #: theme/templates/registration/edit_profile.html:40
 msgid "Your tools"
-msgstr ""
+msgstr "Ваши инструменты"
 
 #: theme/templates/registration/edit_profile.html:59
 #: theme/templates/tools/products.html:31
 #: theme/templates/tools/search_results.html:28
 msgid "Stock"
-msgstr ""
+msgstr "Запас"
 
 #: theme/templates/registration/edit_profile.html:70
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: theme/templates/registration/edit_profile.html:76
 msgid "No tool for now"
-msgstr ""
+msgstr "Инструмента пока нет"
 
 #: theme/templates/registration/login.html:7
 msgid "Sign in with us"
-msgstr ""
+msgstr "Войти с нами"
 
 #: theme/templates/registration/login.html:16
 #: theme/templates/registration/register.html:18
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: theme/templates/registration/login.html:22
 #: theme/templates/registration/register.html:32
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: theme/templates/registration/login.html:42
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: theme/templates/registration/login.html:46
 msgid "Not a member"
-msgstr ""
+msgstr "Не член"
 
 #: theme/templates/registration/login.html:47
 msgid "or sign up with"
-msgstr ""
+msgstr "или зарегистрируйтесь с"
 
 #: theme/templates/registration/register.html:10
 msgid "Sign up with us"
-msgstr ""
+msgstr "Зарегистрируйтесь с нами"
 
 #: theme/templates/registration/register.html:39
 msgid "Repeat password"
-msgstr ""
+msgstr "Повторите пароль"
 
 #: theme/templates/registration/register.html:47
 msgid "I have read and agree to the terms"
-msgstr ""
+msgstr "Я прочитал и согласен с условиями"
 
 #: theme/templates/registration/register.html:52
 msgid "Sign up"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 #: theme/templates/registration/success.html:6
 msgid "Thank you for contacting us"
-msgstr ""
+msgstr "Благодарим Вас за обращение к нам"
 
 #: theme/templates/registration/success.html:7
 msgid "We will get back to you soon"
-msgstr ""
+msgstr "Мы свяжемся с вами в ближайшее время"
 
 #: theme/templates/tools/delete-product.html:8
 msgid "Are u sure u want to delete"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить"
 
 #: theme/templates/tools/delete-product.html:11
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: theme/templates/tools/delete-product.html:12
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: theme/templates/tools/product.html:23
-#, fuzzy
-#| msgid "Product"
 msgid "Product sold"
-msgstr "النتج"
+msgstr "Товар продан"
 
 #: theme/templates/tools/product.html:25
 msgid "times"
-msgstr ""
+msgstr "раз"
 
 #: theme/templates/tools/product.html:61
 msgid "Purchase"
-msgstr ""
+msgstr "Покупка"
 
 #: theme/templates/tools/product.html:66
 msgid "Subtotal"
-msgstr ""
+msgstr "Промежуточный итог"
 
 #: theme/templates/tools/product.html:72
 msgid "Pay-now"
-msgstr ""
+msgstr "Заплатить сейчас"
 
 #: theme/templates/tools/products.html:43
 #: theme/templates/tools/search_results.html:40
 msgid "update"
-msgstr ""
+msgstr "обновлять"
 
 #: theme/templates/tools/products.html:44
 #: theme/templates/tools/search_results.html:41
 msgid "delete"
-msgstr ""
+msgstr "удалить"
 
 #: theme/templates/tools/search_results.html:52
 msgid "No results found."
-msgstr ""
+msgstr "Результатов не найдено."
 
 #: theme/templates/tools/tool_form.html:17
 msgid "Price"
-msgstr ""
+msgstr "Цена"
 
 #: theme/templates/tools/tool_form.html:21
 msgid "Token"
-msgstr ""
+msgstr "Токен"
 
 #: theme/templates/tools/tool_form.html:25
 msgid "Quantity"
-msgstr ""
+msgstr "Количество"
 
 #: theme/templates/tools/tool_form.html:28
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: theme/templates/tools/tool_form.html:32
 msgid "Upload tool"
-msgstr ""
+msgstr "Загрузить инструмент"
 
 #: theme/templates/tools/tool_form.html:37
 msgid "Submit"
-msgstr ""
+msgstr "Представлять на рассмотрение"
 
 #: theme/templates/tools/tool_form.html:38
 msgid "Reset"
-msgstr ""
+msgstr "Перезагрузить"
 
 #: tools/views.py:39
 msgid "hello"
-msgstr "مرحبا"
+msgstr "привет"
 
 #: tools/views.py:53
 msgid "Tool added successfully"
-msgstr "تمت إضافة الأداة بنجاح"
+msgstr "Инструмент успешно добавлен"
 
 #: tools/views.py:57 tools/views.py:83
 msgid "try again"
-msgstr "حاول ثانية"
+msgstr "Попробуйте еще раз"
 
 #: tools/views.py:79
 msgid "Tool updated successfully"
-msgstr "تم تحديث الأداة بنجاح"
+msgstr "Инструмент успешно обновлен"
 
 #: tools/views.py:96
 msgid "Tool deleted successfully"
-msgstr "تم حذف الأداة بنجاح"
+msgstr "Инструмент успешно удален"
 
 #: tools/views.py:191
 msgid "price not correct"
-msgstr "السعر غير صحيح"
+msgstr "цена не правильная"
 
 #: tools/views.py:193
 msgid "product does not exist"
-msgstr "المنتج غير موجود"
+msgstr "продукт не существует"
 
 #: tools/views.py:195
 msgid "Duplicate ipn"
-msgstr "IPn مكرر"
+msgstr "Дубликат ipn"

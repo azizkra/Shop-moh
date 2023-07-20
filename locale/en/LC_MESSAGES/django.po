@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 15:28+0000\n"
+"POT-Creation-Date: 2023-07-20 20:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,6 +98,55 @@ msgstr ""
 msgid "Arabic"
 msgstr ""
 
+#: mysite/settings.py:183
+msgid "Türkiye"
+msgstr ""
+
+#: mysite/settings.py:184
+msgid "Russia"
+msgstr ""
+
+#: theme/templates/base_theme.html:46
+msgid "E-commerce solution powered by"
+msgstr ""
+
+#: theme/templates/other/cancel.html:16
+msgid "The process is not over"
+msgstr ""
+
+#: theme/templates/other/navbar.html:33
+msgid "Profile"
+msgstr ""
+
+#: theme/templates/other/navbar.html:35
+msgid "Add new tool"
+msgstr ""
+
+#: theme/templates/other/navbar.html:37
+msgid "Change password"
+msgstr ""
+
+#: theme/templates/other/navbar.html:38
+msgid "Logout"
+msgstr ""
+
+#: theme/templates/other/navbar.html:41
+msgid "Login"
+msgstr ""
+
+#: theme/templates/other/navbar.html:42
+#: theme/templates/registration/login.html:46
+msgid "Register"
+msgstr ""
+
+#: theme/templates/other/search.html:8
+msgid "search"
+msgstr ""
+
+#: theme/templates/other/success.html:16
+msgid "Success"
+msgstr ""
+
 #: theme/templates/other/topnav.html:6
 msgid "Product"
 msgstr ""
@@ -120,6 +169,196 @@ msgstr ""
 
 #: theme/templates/other/topnav.html:11
 msgid "Affiliate Program"
+msgstr ""
+
+#: theme/templates/registration/change_password.html:7
+#, fuzzy
+#| msgid "Invalid username or password"
+msgid "Change your password"
+msgstr "خطأ في اسم المستخدم أو كلمة مرور"
+
+#: theme/templates/registration/change_password.html:14
+msgid "Current password"
+msgstr ""
+
+#: theme/templates/registration/change_password.html:20
+msgid "New password"
+msgstr ""
+
+#: theme/templates/registration/change_password.html:26
+msgid "Repat password"
+msgstr ""
+
+#: theme/templates/registration/change_password.html:30
+msgid "Reset password"
+msgstr ""
+
+#: theme/templates/registration/contact.html:10
+msgid "Contact us"
+msgstr ""
+
+#: theme/templates/registration/contact.html:17
+#: theme/templates/tools/tool_form.html:13
+msgid "Name"
+msgstr ""
+
+#: theme/templates/registration/contact.html:23
+#: theme/templates/registration/register.html:25
+msgid "Email address"
+msgstr ""
+
+#: theme/templates/registration/contact.html:29
+msgid "Message"
+msgstr ""
+
+#: theme/templates/registration/contact.html:34
+msgid "Send"
+msgstr ""
+
+#: theme/templates/registration/edit_profile.html:33
+msgid "number of purchased tools"
+msgstr ""
+
+#: theme/templates/registration/edit_profile.html:40
+msgid "Your tools"
+msgstr ""
+
+#: theme/templates/registration/edit_profile.html:59
+#: theme/templates/tools/products.html:31
+#: theme/templates/tools/search_results.html:28
+msgid "Stock"
+msgstr ""
+
+#: theme/templates/registration/edit_profile.html:70
+msgid "Download"
+msgstr ""
+
+#: theme/templates/registration/edit_profile.html:76
+msgid "No tool for now"
+msgstr ""
+
+#: theme/templates/registration/login.html:7
+msgid "Sign in with us"
+msgstr ""
+
+#: theme/templates/registration/login.html:16
+#: theme/templates/registration/register.html:18
+msgid "Username"
+msgstr ""
+
+#: theme/templates/registration/login.html:22
+#: theme/templates/registration/register.html:32
+msgid "Password"
+msgstr ""
+
+#: theme/templates/registration/login.html:42
+msgid "Sign in"
+msgstr ""
+
+#: theme/templates/registration/login.html:46
+msgid "Not a member"
+msgstr ""
+
+#: theme/templates/registration/login.html:47
+msgid "or sign up with"
+msgstr ""
+
+#: theme/templates/registration/register.html:10
+msgid "Sign up with us"
+msgstr ""
+
+#: theme/templates/registration/register.html:39
+msgid "Repeat password"
+msgstr ""
+
+#: theme/templates/registration/register.html:47
+msgid "I have read and agree to the terms"
+msgstr ""
+
+#: theme/templates/registration/register.html:52
+msgid "Sign up"
+msgstr ""
+
+#: theme/templates/registration/success.html:6
+msgid "Thank you for contacting us"
+msgstr ""
+
+#: theme/templates/registration/success.html:7
+msgid "We will get back to you soon"
+msgstr ""
+
+#: theme/templates/tools/delete-product.html:8
+msgid "Are u sure u want to delete"
+msgstr ""
+
+#: theme/templates/tools/delete-product.html:11
+msgid "Cancel"
+msgstr ""
+
+#: theme/templates/tools/delete-product.html:12
+msgid "Delete"
+msgstr ""
+
+#: theme/templates/tools/product.html:23
+msgid "Product sold"
+msgstr ""
+
+#: theme/templates/tools/product.html:25
+msgid "times"
+msgstr ""
+
+#: theme/templates/tools/product.html:61
+msgid "Purchase"
+msgstr ""
+
+#: theme/templates/tools/product.html:66
+msgid "Subtotal"
+msgstr ""
+
+#: theme/templates/tools/product.html:72
+msgid "Pay-now"
+msgstr ""
+
+#: theme/templates/tools/products.html:43
+#: theme/templates/tools/search_results.html:40
+msgid "update"
+msgstr ""
+
+#: theme/templates/tools/products.html:44
+#: theme/templates/tools/search_results.html:41
+msgid "delete"
+msgstr ""
+
+#: theme/templates/tools/search_results.html:52
+msgid "No results found."
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:17
+msgid "Price"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:21
+msgid "Token"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:25
+msgid "Quantity"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:28
+msgid "Image"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:32
+msgid "Upload tool"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:37
+msgid "Submit"
+msgstr ""
+
+#: theme/templates/tools/tool_form.html:38
+msgid "Reset"
 msgstr ""
 
 #: tools/views.py:39

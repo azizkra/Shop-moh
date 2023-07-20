@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container box-login-register-form" style="padding-top: 70px;">
-    <h4 class="text-slate-900 dark:text-gray-50">Sign in with us:</h4>
+    <h4 class="text-slate-900 dark:text-gray-50">{% trans "Sign in with us" %}:</h4>
     <br>
     <div class="box-parent-registration">
         <div class="box-registration">
@@ -13,13 +13,13 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="loginName" class="form-control" name="username" required />
-                    <label class="form-label" for="loginName">Username</label>
+                    <label class="form-label" for="loginName">{% trans "Username" %}</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                     <input type="password" id="loginPassword" class="form-control" name="password" required />
-                    <label class="form-label" for="loginPassword">Password</label>
+                    <label class="form-label" for="loginPassword">{% trans "Password" %}</label>
                 </div>
 
                 <!-- 2 column grid layout for inline styling -->
@@ -38,12 +38,12 @@
                     </div>
                 </div> {% endcomment %}
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Sign in" %}</button>
 
                 <!-- Register buttons -->
                 <div class="text-center">
-                    <p class="text-slate-900 dark:text-gray-50">Not a member? <a href="{% url 'register' %}">Register</a></p>
-                    <p class="text-slate-900 dark:text-gray-50">or sign up with:</p>
+                    <p class="text-slate-900 dark:text-gray-50">{% trans "Not a member" %}? <a href="{% url 'register' %}">{% trans "Register" %}</a></p>
+                    <p class="text-slate-900 dark:text-gray-50">{% trans "or sign up with" %}:</p>
                     <button type="button" class="btn btn-secondary btn-floating mx-1">
                         <i class="fab fa-facebook-f"></i>
                     </button>

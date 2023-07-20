@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 20:56+0000\n"
+"POT-Creation-Date: 2023-07-20 20:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,384 +16,376 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 #: account/form.py:8 account/form.py:12 account/form.py:16
 msgid "required field"
-msgstr "الحقل مطلوب"
+msgstr "gerekli alan"
 
 #: account/form.py:9
 msgid "Username must be at least 4 characters long."
-msgstr "يجب أن يتكون اسم المستخدم من 4 أحرف على الأقل."
+msgstr "Kullanıcı adı en az 4 karakter uzunluğunda olmalıdır."
 
 #: account/form.py:13
 msgid "Enter a valid email."
-msgstr "أدخل بريد إلكتروني صالح."
+msgstr "Geçerli bir e-posta giriniz."
 
 #: account/form.py:17
 msgid "Password must be at least 8 characters long."
-msgstr "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
+msgstr "Şifre en az 8 karakter uzunluğunda olmalıdır."
 
 #: account/form.py:36
 msgid "Passwords do not match."
-msgstr "كلمة المرور غير مطابقة."
+msgstr "Parolalar uyuşmuyor."
 
 #: account/form.py:42
 msgid "There is a registered username with this name."
-msgstr "يوجد اسم مستخدم مسجل بهذا الاسم."
+msgstr "Bu ada sahip kayıtlı bir kullanıcı adı var."
 
 #: account/form.py:48
 msgid "This email is already registered."
-msgstr "عنوان البريد الإلكترونى هذا مسجل بالفعل."
+msgstr "Bu e-posta zaten kayıtlı."
 
 #: account/views.py:30
 msgid "Registration successfully you can now login-in"
-msgstr "لقد سجلت بنجاح يمكنك الآن تسجيل الدخول"
+msgstr "Kayıt başarıyla şimdi giriş yapabilirsiniz"
 
 #: account/views.py:33
 msgid "Something error, try again later"
-msgstr "خطأ ما ، حاول مرة أخرى في وقت لاحق"
+msgstr "Bir hata oluştu, daha sonra tekrar deneyin"
 
 #: account/views.py:53
 msgid "Login-in successfully"
-msgstr "تسجيل الدخول بنجاح"
+msgstr "Giriş başarıyla yapıldı"
 
 #: account/views.py:56
 msgid "Invalid username or password"
-msgstr "خطأ في اسم المستخدم أو كلمة مرور"
+msgstr "Geçersiz kullanıcı adı veya şifre"
 
 #: account/views.py:70
 msgid "Updating profile successfully"
-msgstr "تحديث الملف الشخصي بنجاح"
+msgstr "Profil başarıyla güncelleniyor"
 
 #: account/views.py:72
 msgid "Somthing want wrong"
-msgstr "هناك خطأ ما"
+msgstr "Bir şeyler yanlış gitti"
 
 #: account/views.py:93
 msgid "Your password changed successfully"
-msgstr "تم تغيير كلمة المرور الخاصة بك بنجاح"
+msgstr "Parolanız başarıyla değiştirildi"
 
 #: account/views.py:103
 msgid "See you ^_^"
-msgstr "أراك ^ _ ^"
+msgstr "görüşürüz ^_^"
 
 #: account/views.py:122
 msgid "Your message sent successfully"
-msgstr "تم إرسال رسالتك بنجاح"
+msgstr "Mesajınız başarıyla gönderildi"
 
 #: account/views.py:155
 msgid ".exe file not found"
-msgstr "ملف exe. غير موجود"
+msgstr ".exe dosyası bulunamadı"
 
 #: account/views.py:169
 msgid "You do not have permission to download this tool."
-msgstr "ليس لديك إذن لتنزيل هذه الأداة."
+msgstr "Bu aracı indirme izniniz yok."
 
 #: mysite/settings.py:181
 msgid "English"
-msgstr "الانكليزية"
+msgstr "İngilizce"
 
 #: mysite/settings.py:182
 msgid "Arabic"
-msgstr "العربية"
+msgstr "Arapça"
 
 #: mysite/settings.py:183
 msgid "Türkiye"
-msgstr ""
+msgstr "türkiye"
 
 #: mysite/settings.py:184
 msgid "Russia"
-msgstr ""
+msgstr "Rusya"
 
 #: theme/templates/base_theme.html:46
 msgid "E-commerce solution powered by"
-msgstr ""
+msgstr "tarafından desteklenen e-ticaret çözümü"
 
 #: theme/templates/other/cancel.html:16
 msgid "The process is not over"
-msgstr ""
+msgstr "The process is not over"
 
 #: theme/templates/other/navbar.html:33
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: theme/templates/other/navbar.html:35
 msgid "Add new tool"
-msgstr ""
+msgstr "Yeni araç ekle"
 
 #: theme/templates/other/navbar.html:37
 msgid "Change password"
-msgstr ""
+msgstr "Şifre değiştir"
 
 #: theme/templates/other/navbar.html:38
 msgid "Logout"
-msgstr ""
+msgstr "Çıkış Yap"
 
 #: theme/templates/other/navbar.html:41
 msgid "Login"
-msgstr ""
+msgstr "Giriş yapmak"
 
 #: theme/templates/other/navbar.html:42
 #: theme/templates/registration/login.html:46
 msgid "Register"
-msgstr ""
+msgstr "Kayıt olmak"
 
 #: theme/templates/other/search.html:8
 msgid "search"
-msgstr ""
+msgstr "aramak"
 
 #: theme/templates/other/success.html:16
 msgid "Success"
-msgstr ""
+msgstr "Başarı"
 
 #: theme/templates/other/topnav.html:6
 msgid "Product"
-msgstr "النتج"
+msgstr "Ürün"
 
 #: theme/templates/other/topnav.html:7
 msgid "Contact"
-msgstr "اتصال"
+msgstr "Temas etmek"
 
 #: theme/templates/other/topnav.html:8
 msgid "Feedback"
-msgstr "تعليق"
+msgstr "Geri bildirim"
 
 #: theme/templates/other/topnav.html:9
 msgid "Terms"
-msgstr "شروط"
+msgstr "şartlar"
 
 #: theme/templates/other/topnav.html:10
 msgid "About"
-msgstr "من نحن"
+msgstr "Hakkında"
 
 #: theme/templates/other/topnav.html:11
 msgid "Affiliate Program"
-msgstr "إنضم لبرنامج"
+msgstr "Ortaklık Programı"
 
 #: theme/templates/registration/change_password.html:7
-#, fuzzy
-#| msgid "Invalid username or password"
 msgid "Change your password"
-msgstr "خطأ في اسم المستخدم أو كلمة مرور"
+msgstr "Şifreni değiştir"
 
 #: theme/templates/registration/change_password.html:14
 msgid "Current password"
-msgstr ""
+msgstr "Mevcut Şifre"
 
 #: theme/templates/registration/change_password.html:20
 msgid "New password"
-msgstr ""
+msgstr "Yeni Şifre"
 
 #: theme/templates/registration/change_password.html:26
 msgid "Repat password"
-msgstr ""
+msgstr "Parolayı tekrarla"
 
 #: theme/templates/registration/change_password.html:30
 msgid "Reset password"
-msgstr ""
+msgstr "Şifreyi yenile"
 
 #: theme/templates/registration/contact.html:10
-#, fuzzy
-#| msgid "Contact"
 msgid "Contact us"
-msgstr "اتصال"
+msgstr "Bize Ulaşın"
 
 #: theme/templates/registration/contact.html:17
 #: theme/templates/tools/tool_form.html:13
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: theme/templates/registration/contact.html:23
 #: theme/templates/registration/register.html:25
 msgid "Email address"
-msgstr ""
+msgstr "E-posta adresi"
 
 #: theme/templates/registration/contact.html:29
 msgid "Message"
-msgstr ""
+msgstr "İleti"
 
 #: theme/templates/registration/contact.html:34
 msgid "Send"
-msgstr ""
+msgstr "Göndermek"
 
 #: theme/templates/registration/edit_profile.html:33
 msgid "number of purchased tools"
-msgstr ""
+msgstr "satın alınan araç sayısı"
 
 #: theme/templates/registration/edit_profile.html:40
 msgid "Your tools"
-msgstr ""
+msgstr "Araçlarınız"
 
 #: theme/templates/registration/edit_profile.html:59
 #: theme/templates/tools/products.html:31
 #: theme/templates/tools/search_results.html:28
 msgid "Stock"
-msgstr ""
+msgstr "Stoklamak"
 
 #: theme/templates/registration/edit_profile.html:70
 msgid "Download"
-msgstr ""
+msgstr "İndirmek"
 
 #: theme/templates/registration/edit_profile.html:76
 msgid "No tool for now"
-msgstr ""
+msgstr "Şimdilik alet yok"
 
 #: theme/templates/registration/login.html:7
 msgid "Sign in with us"
-msgstr ""
+msgstr "bizimle oturum açın"
 
 #: theme/templates/registration/login.html:16
 #: theme/templates/registration/register.html:18
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #: theme/templates/registration/login.html:22
 #: theme/templates/registration/register.html:32
 msgid "Password"
-msgstr ""
+msgstr "Şifre"
 
 #: theme/templates/registration/login.html:42
 msgid "Sign in"
-msgstr ""
+msgstr "Kayıt olmak"
 
 #: theme/templates/registration/login.html:46
 msgid "Not a member"
-msgstr ""
+msgstr "Üye değil"
 
 #: theme/templates/registration/login.html:47
 msgid "or sign up with"
-msgstr ""
+msgstr "veya ile kayıt ol"
 
 #: theme/templates/registration/register.html:10
 msgid "Sign up with us"
-msgstr ""
+msgstr "bize kaydolun"
 
 #: theme/templates/registration/register.html:39
 msgid "Repeat password"
-msgstr ""
+msgstr "Şifreyi tekrar girin"
 
 #: theme/templates/registration/register.html:47
 msgid "I have read and agree to the terms"
-msgstr ""
+msgstr "Şartları okudum ve kabul ediyorum"
 
 #: theme/templates/registration/register.html:52
 msgid "Sign up"
-msgstr ""
+msgstr "Üye olmak"
 
 #: theme/templates/registration/success.html:6
 msgid "Thank you for contacting us"
-msgstr ""
+msgstr "Bizimle iletişime geçtiğiniz için teşekkürler"
 
 #: theme/templates/registration/success.html:7
 msgid "We will get back to you soon"
-msgstr ""
+msgstr "Yakında size geri döneceğiz"
 
 #: theme/templates/tools/delete-product.html:8
 msgid "Are u sure u want to delete"
-msgstr ""
+msgstr "silmek istediğinden emin misin"
 
 #: theme/templates/tools/delete-product.html:11
 msgid "Cancel"
-msgstr ""
+msgstr "İptal etmek"
 
 #: theme/templates/tools/delete-product.html:12
 msgid "Delete"
-msgstr ""
+msgstr "Silmek"
 
 #: theme/templates/tools/product.html:23
-#, fuzzy
-#| msgid "Product"
 msgid "Product sold"
-msgstr "النتج"
+msgstr "Ürün satıldı"
 
 #: theme/templates/tools/product.html:25
 msgid "times"
-msgstr ""
+msgstr "zamanlar"
 
 #: theme/templates/tools/product.html:61
 msgid "Purchase"
-msgstr ""
+msgstr "Satın almak"
 
 #: theme/templates/tools/product.html:66
 msgid "Subtotal"
-msgstr ""
+msgstr "ara toplam"
 
 #: theme/templates/tools/product.html:72
 msgid "Pay-now"
-msgstr ""
+msgstr "Şimdi öde"
 
 #: theme/templates/tools/products.html:43
 #: theme/templates/tools/search_results.html:40
 msgid "update"
-msgstr ""
+msgstr "güncelleme"
 
 #: theme/templates/tools/products.html:44
 #: theme/templates/tools/search_results.html:41
 msgid "delete"
-msgstr ""
+msgstr "silmek"
 
 #: theme/templates/tools/search_results.html:52
 msgid "No results found."
-msgstr ""
+msgstr "Sonuç bulunamadı."
 
 #: theme/templates/tools/tool_form.html:17
 msgid "Price"
-msgstr ""
+msgstr "Fiyat"
 
 #: theme/templates/tools/tool_form.html:21
 msgid "Token"
-msgstr ""
+msgstr "Jeton"
 
 #: theme/templates/tools/tool_form.html:25
 msgid "Quantity"
-msgstr ""
+msgstr "Miktar"
 
 #: theme/templates/tools/tool_form.html:28
 msgid "Image"
-msgstr ""
+msgstr "resim"
 
 #: theme/templates/tools/tool_form.html:32
 msgid "Upload tool"
-msgstr ""
+msgstr "Yükleme aracı"
 
 #: theme/templates/tools/tool_form.html:37
 msgid "Submit"
-msgstr ""
+msgstr "Göndermek"
 
 #: theme/templates/tools/tool_form.html:38
 msgid "Reset"
-msgstr ""
+msgstr "Sıfırla"
 
 #: tools/views.py:39
 msgid "hello"
-msgstr "مرحبا"
+msgstr "Merhaba"
 
 #: tools/views.py:53
 msgid "Tool added successfully"
-msgstr "تمت إضافة الأداة بنجاح"
+msgstr "Araç başarıyla eklendi"
 
 #: tools/views.py:57 tools/views.py:83
 msgid "try again"
-msgstr "حاول ثانية"
+msgstr "tekrar deneyin"
 
 #: tools/views.py:79
 msgid "Tool updated successfully"
-msgstr "تم تحديث الأداة بنجاح"
+msgstr "Araç başarıyla güncellendi"
 
 #: tools/views.py:96
 msgid "Tool deleted successfully"
-msgstr "تم حذف الأداة بنجاح"
+msgstr "Araç başarıyla silindi"
 
 #: tools/views.py:191
 msgid "price not correct"
-msgstr "السعر غير صحيح"
+msgstr "fiyat doğru değil"
 
 #: tools/views.py:193
 msgid "product does not exist"
-msgstr "المنتج غير موجود"
+msgstr "ürün mevcut değil"
 
 #: tools/views.py:195
 msgid "Duplicate ipn"
-msgstr "IPn مكرر"
+msgstr "yinelenen ipn"

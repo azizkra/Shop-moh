@@ -28,7 +28,7 @@
                                 <div class="card-count-price">
                                     <p class="card-text dark:text-gray-100 text-slate-900">${{ tool.price }}</p>
                                     <span class="dark:text-gray-100 text-slate-900">
-                                        Stock
+                                        {% trans "Stock" %}
                                         {% if tool.quantity > 10 %}
                                             <i class="fa-solid fa-infinity dark:text-green-500 text-green-600"></i>
                                         {% else %}
@@ -40,8 +40,8 @@
                                 </div>
                                 {% if request.user.is_superuser %}
                                     <div class="btn-admin">
-                                        <a class="btn btn-info" href="{% url 'update_tool' tool.id %}">update</a>
-                                        <a class="btn btn-danger" href="{% url 'delete_tool' tool.id %}">delete</a>
+                                        <a class="btn btn-info" href="{% url 'update_tool' tool.id %}">{% trans "update" %}</a>
+                                        <a class="btn btn-danger" href="{% url 'delete_tool' tool.id %}">{% trans "delete" %}</a>
                                     </div>
                                 {% endif %}
                             </div>

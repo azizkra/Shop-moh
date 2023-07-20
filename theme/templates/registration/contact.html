@@ -7,31 +7,31 @@
 
 
     <div class="container box-login-register-form" style="padding-top: 70px;">
-        <h4 class="dark:text-gray-100 text-slate-900">Contact us</h4>
+        <h4 class="dark:text-gray-100 text-slate-900">{% trans "Contact us" %}</h4>
         <br>
         <form method="POST">
             {% csrf_token %}
             <!-- Name input -->
             <div class="form-outline mb-4">
                 <input type="text" id="form4Example1" class="form-control" required/>
-                <label class="form-label" for="form4Example1">Name</label>
+                <label class="form-label" for="form4Example1">{% trans "Name" %}</label>
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <input type="email" id="form4Example2" class="form-control" required/>
-                <label class="form-label" for="form4Example2">Email address</label>
+                <label class="form-label" for="form4Example2">{% trans "Email address" %}</label>
             </div>
 
             <!-- Message input -->
             <div class="form-outline mb-4">
                 <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                <label class="form-label" for="form4Example3">Message</label>
+                <label class="form-label" for="form4Example3">{% trans "Message" %}</label>
             </div>
 
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Send" %}</button>
         </form>
     </div>
 {% endblock content %}

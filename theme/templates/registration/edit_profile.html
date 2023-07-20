@@ -29,14 +29,14 @@
                         <div class="p-4 text-black" style="background-color: #f8f9fa;">
                             <div class="d-flex justify-content-end text-center py-1">
                                 <div>
-                                    <p class="mb-1 h5">number of purchased tools</p>
+                                    <p class="mb-1 h5">{% trans "number of purchased tools" %}</p>
                                     <p class="small text-muted mb-0">{{ user.purchase_tool.count }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body p-4 text-black">
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <p class="lead fw-normal mb-0">Your tools</p>
+                                <p class="lead fw-normal mb-0">{% trans "Your tools" %}</p>
                             </div>
                             <div class="card-box-profile">
                                 {% for tool in user.purchase_tool.all %}
@@ -55,7 +55,7 @@
                                             <div class="card-count-price">
                                                 <p class="card-text">${{ tool.price }}</p>
                                                 <span>
-                                                    Stock
+                                                    {% trans "Stock" %}
                                                     {% if tool.quantity > 10 %}
                                                         <i class="fa-solid fa-infinity"></i>
                                                     {% else %}
@@ -66,13 +66,13 @@
                                                 </span>
                                             </div>
                                             <div class="btn-admin">
-                                                <a class="btn btn-info" href="{% url 'download_exe' tool.id %}">Download</a>
+                                                <a class="btn btn-info" href="{% url 'download_exe' tool.id %}">{% trans "Download" %}</a>
                                             </div>
                                         </div>
                                     </div>
                                 {% empty %}
                                     <div>
-                                        <p> No tool for now </p>
+                                        <p> {% trans "No tool for now" %} </p>
                                     </div>
                                 {% endfor %}
                                 <!-- Add more cards here -->

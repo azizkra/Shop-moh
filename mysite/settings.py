@@ -180,6 +180,8 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', _('English')),
     ('ar', _('Arabic')),
+    ('tr', _('Türkiye')),
+    ('ru', _('Russia')),
 )
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
