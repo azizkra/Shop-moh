@@ -1,0 +1,60 @@
+{% extends 'base_theme.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+
+<!-- start Card  -->
+<div class="container">
+    {% if tools %}
+        <div class="card-box">
+            {% for tool in tools %}
+                {% if tool.is_visible %}
+                    <div class="card">
+                        {% comment %} <a href="#!"> {% endcomment %}
+                            <div class="bg-image hover-zoom">
+                                {% if tool.image %}
+                                    <img class="card-img-top lazyload" data-src="{{ tool.image.url }}" alt="Lazy-loaded Image">
+                                {% else %}
+                                    <img class="card-img-top lazyload" src="{% static 'img/default-product-img.jpg' %}" alt="Lazy-loaded Image">
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ tool.tool_name }}</h5>
+                                <div class="card-count-price">
+                                    <p class="card-text">${{ tool.price }}</p>
+                                    <span>
+                                        Stock
+                                        {% if tool.quantity > 10 %}
+                                            <i class="fa-solid fa-infinity"></i>
+                                        {% else %}
+                                            <span>
+                                                {{ tool.quantity }}
+                                            </span>
+                                        {% endif %}
+                                    </span>
+                                </div>
+                                {% if request.user.is_superuser %}
+                                    <div class="btn-admin">
+                                        <a class="btn btn-info" href="{% url 'update_tool' tool.id %}">update</a>
+                                        <a class="btn btn-danger" href="{% url 'delete_tool' tool.id %}">delete</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% comment %} </a> {% endcomment %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <!-- Add more cards here -->
+        </div>
+    {% else %}
+        <div class="not-found">
+            <p>No results found.</p>
+        </div>
+    {% endif %}
+</div>
+<!-- end Card  -->
+
+{% endblock content %}

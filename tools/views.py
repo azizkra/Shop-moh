@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, activate, gettext_lazy
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -25,12 +27,19 @@ def search_tool(request):
 
 
 def display_tool(request):
+    trans = translate(language='ar')
     tools = Tool.objects.all()
-    
     context={'tools':tools}
     return render(request, 'tools/products.html', context)
 
-
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+        text = _('hello')
+    finally:
+        activate(cur_language)
+    return text
 
 @staff_member_required
 @login_required()
@@ -41,11 +50,11 @@ def add_Tool(request):
             tool = form.save(commit=False)
             tool.username = request.user
             tool.save()
-            messages.success(request, 'Tool added successfully')
+            messages.success(request, _('Tool added successfully'))
             return redirect('display_tool')
             # return redirect('tool-detail', pk=tool.pk)
         else:
-            messages.error(request, 'try again')
+            messages.error(request, _('try again'))
             return redirect('add_tool')
     else:
         form = ToolForm()
@@ -67,11 +76,11 @@ def update_Tool(request, pk):
         form = ToolForm(request.POST, request.FILES, instance=tool)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Tool updated successfully')
+            messages.success(request, _('Tool updated successfully'))
             return redirect('display_tool')
             # return redirect('tool-detail', pk=tool.pk)
         else:
-            messages.error(request, 'try again')
+            messages.error(request, _('try again'))
             return redirect('update_tool')
     else:
         
@@ -84,7 +93,7 @@ def delete_Tool(request, pk):
     tool = get_object_or_404(Tool, pk=pk)
     if request.method == 'POST':
         tool.delete()
-        messages.success(request, 'Tool deleted successfully')
+        messages.success(request, _('Tool deleted successfully'))
         return redirect('display_tool')
     
     context={'tool':tool}
@@ -179,9 +188,9 @@ def coinbase_postback(request):
                             # if you need to send email
                             
                         else:
-                            error = "price not correct"
+                            error = _("price not correct")
                     else:
-                        error = "product does not exist"
+                        error = _("product does not exist")
             else:
-                error = "Duplicate ipn"
+                error = _("Duplicate ipn")
     return HttpResponse('ok')

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import logout
 from django.contrib import messages
@@ -26,10 +27,10 @@ def register(request):
             new_user = form.save()
             # Create the user profile
             Profile.objects.create(user=new_user)
-            messages.success(request, 'Registration successfully you can now login-in')
+            messages.success(request, _('Registration successfully you can now login-in'))
             return redirect('login_view')
         else:
-            messages.error(request, 'Something error, try again later')
+            messages.error(request, _('Something error, try again later'))
             return redirect('register')
     else:
         form = RegistrationForm()
@@ -49,10 +50,10 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, 'Login-in successfully')
+            messages.success(request, _('Login-in successfully'))
             return redirect('/')
         else:
-            messages.error(request, 'Invalid username or password')
+            messages.error(request, _('Invalid username or password'))
             return redirect('login_view')
     return render(request, 'registration/login.html', {'page':page})
 
@@ -66,9 +67,9 @@ def edit_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Updating profile successfully')
+            messages.success(request, _('Updating profile successfully'))
         else:
-            messages.error(request, 'Somthing want wrong')
+            messages.error(request, _('Somthing want wrong'))
             return redirect('profile')
     else:
         user_form = user_form = UserEditForm(instance=request.user)
@@ -89,7 +90,7 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user) #تحديث جلسة المستخدم بكلمة المرور الجديدة للحفاظ على حالة المصادقة للمستخدم
-            messages.success(request, 'Your password changed successfully')
+            messages.success(request, _('Your password changed successfully'))
             return redirect('/')
     else:
         form = PasswordChangeForm(request.user)
@@ -99,7 +100,7 @@ def change_password(request):
 
 def logout_view(request):
     logout(request)
-    messages.success(request, 'See you ^_^')
+    messages.success(request, _('See you ^_^'))
     return redirect('login_view')
 
 
@@ -118,7 +119,7 @@ def contact_view(request):
                 ['recipient@example.com'],
                 fail_silently=False,
             )
-            messages.success(request, 'Your message sent successfully')
+            messages.success(request, _('Your message sent successfully'))
             return redirect('success')  # Redirect to success page
         
         else:
@@ -151,7 +152,7 @@ def download_exe(request, tool_id):
     tool = get_object_or_404(Tool, id=tool_id)
     
     if not tool.upload_tool:
-        raise Http404('.exe file not found')
+        raise Http404(_('.exe file not found'))
     
     
     # Check if the user is the owner of the tool or has purchased it
@@ -165,6 +166,6 @@ def download_exe(request, tool_id):
     else:
         # Redirect or show an error message indicating that the tool is not accessible
         # to the user
-        error_message= 'You do not have permission to download this tool.'
+        error_message= _('You do not have permission to download this tool.')
         context={'error_message':error_message}
         return render(request, 'registration/profile_edit.html', context)

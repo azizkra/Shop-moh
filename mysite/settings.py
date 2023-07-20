@@ -1,10 +1,12 @@
 import os
+from django.utils.translation import gettext_lazy as _
+from pathlib import Path
+
 # import django_heroku
 # import dj_database_url
 # from decouple import config
 
 
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,11 +39,25 @@ INSTALLED_APPS = [
     
     # 'social_django',
     # 'django_extensions',
+    
+    # tailwind css Django apps
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+    
+    # for trans
+    'rosetta',
+    
 ]
+
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ["127.0.0.1",]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # for trans
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -50,6 +66,8 @@ MIDDLEWARE = [
     
     # for static files in Globale
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    
+    "django_browser_reload.middleware.BrowserReloadMiddleware",    
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -65,6 +83,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+                'theme.context_processors.theme'
             ],
         },
     },
@@ -139,7 +159,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_URL = 'account/login_view/'
+LOGIN_URL = 'login_view'
 
 # Email server configuration
 EMAIL_HOST = 'smtp.gmail.com'
@@ -155,3 +175,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # django_heroku.settings(locals())
+
+LANGUAGE_CODE = 'en'
+LANGUAGES = (
+    ('en', _('English')),
+    ('ar', _('Arabic')),
+)
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)

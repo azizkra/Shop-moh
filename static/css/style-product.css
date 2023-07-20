@@ -12,7 +12,7 @@
 }
 
 .product-title {
-    color: #3F4A60 !important;
+    color: #3F4A60;
     font-size: 24px;
     display: flex;
     justify-content: left;
@@ -71,12 +71,12 @@
 
 .card-body .to-back {
     cursor: pointer;
-    color: #0a1730;
+    /* color: #0a1730; */
 }
 
 .card-body .card-title {
     font-size: 18px;
-    color: #3f4a60;
+    /* color: #3f4a60; */
     margin-bottom: 1.5rem;
 }
 
@@ -89,7 +89,7 @@
 
 .card-info .card-text {
     font-size: 14px;
-    color: #0a1730;
+    /* color: #0a1730; */
 }
 
 .card-info .total-price {
@@ -120,7 +120,7 @@
     margin: 0;
     line-height: 1.2rem;
     margin-bottom: 0.6rem;
-    color: #0a1730;
+    /* color: #0a1730; */
     padding-left: 20px;
 }
 
@@ -134,5 +134,4 @@
         margin-top: 32px  !important;
     }
 }
-
 

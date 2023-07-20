@@ -1,0 +1,14 @@
+{% load i18n %}
+<!-- Start topnav -->
+<br>
+<div class="container">
+    <div class="topnav dark:bg-slate-900 bg-slate-50">
+        <a class="menu-tab active dark:text-slate-900 text-slate-900" href="{% url 'display_tool' %}">{% trans "Product" %}</a>
+        <a class="menu-tab dark:text-gray-100 text-slate-900" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+        <a class="menu-tab dark:text-gray-100 text-slate-900" href="#feedback">{% trans "Feedback" %}</a>
+        <a class="menu-tab dark:text-gray-100 text-slate-900" href="{% url 'trems' %}">{% trans "Terms" %}</a>
+        <a class="menu-tab dark:text-gray-100 text-slate-900" href="{% url 'about' %}">{% trans "About" %}</a>
+        <a class="menu-tab dark:text-gray-100 text-slate-900" href="#Trusted_Advisor">{% trans "Affiliate Program" %}</a>
+    </div>
+</div>
+<!-- End topnav -->
