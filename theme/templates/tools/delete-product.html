@@ -8,7 +8,7 @@
             <p class="dark:text-slate-50 text-slate-900">{% trans "Are u sure u want to delete" %} "{{ tool.tool_name }}"</p>
             <form method="POST">
                 {% csrf_token %}
-                <a class="btn btn-info" href="{% url 'display_tool' %}">{% trans "Cancel" %}</a>
+                <a class="btn btn-info" href="{{ request.META.HTTP_REFERER}}">{% trans "Cancel" %}</a>
                 <input class="btn btn-danger" type="submit" name="{% trans "Delete" %}">
             </form>
         </div>

@@ -29,7 +29,7 @@ body {
 
 /* ! Card */
 .card-box {
-    padding-top: 70px;
+    padding: 70px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -47,7 +47,7 @@ body {
 
 .card a {
     text-decoration: none;
-    border: 1px solid #e8e8e8;
+    border: none;
 }
 
 .card .card-content {
@@ -57,7 +57,7 @@ body {
 }
 
 .card-body .card-title {
-    color: #3F4A60;
+    /* color: #3F4A60; */
     font-size: 16px;
     font-weight: 600;
     line-height: 150%;
@@ -127,6 +127,7 @@ body {
     .card-box-profile {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
@@ -173,8 +174,6 @@ body {
 }
 
 .topnav .active {
-    color: #5f40e5 !important;
-    border-bottom-color: #5f40e5;
     font-size: 14px !important;
     font-weight: 400 !important;
     background: #ffffff;
@@ -205,8 +204,8 @@ body {
 
 footer {
     width: 100%;
-    background-color: #fff !important;
-    border-top: 1px solid #e8e8e8 !important;
+    /* background-color: #fff; */
+    border-top: 1px solid #e8e8e8;
     padding: 28px;
     font-size: 14px;
     font-weight: 300;
@@ -234,9 +233,9 @@ footer {
     text-align: center;
 }
 
-.footer-content p {
+/* .footer-content p {
     color: #777787;
-}
+} */
 
 .footer-content span {
     color: #5f40e5;
@@ -314,4 +313,16 @@ footer {
     padding-top: 70px;
     margin-bottom: 30px;
     text-align: center;
+}
+
+
+/* navbar */
+.dropdown-logout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-body[class*=bg-]{
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }

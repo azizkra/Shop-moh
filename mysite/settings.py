@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rosetta',
     
 ]
-
+# TAILWIND
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1",]
@@ -96,22 +96,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'PASSWORD': 'azizkrayyem1234567890@@',
-#         'USER': 'postgres',
-#         'HOST': 'containers-us-west-196.railway.app',
-#         'PORT': '6625',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tool',
+        'USER': 'admin-shop',
+        'PASSWORD': '123456',
+        # 'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -179,7 +179,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', _('English')),
-    ('ar', _('Arabic')),
+    # ('ar', _('Arabic')),
     ('tr', _('Türkiye')),
     ('ru', _('Russia')),
 )

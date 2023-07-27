@@ -2,6 +2,11 @@
 {% load static %}
 {% load i18n %}
 
+{% block stylecss %}
+
+
+{% endblock stylecss %}
+
 
 {% block content %}
     <section class="h-100 gradient-custom-2">
@@ -16,30 +21,38 @@
                                 {% else %}
                                     <img src="{% static 'img/user.png' %}" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                                 {% endif %}
-                                {% comment %} <form method="POST" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {{ profile_form }}
-                                    <input type="submit" class="btn btn-success" name="Update"/>
-                                </form> {% endcomment %}
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
                                 <h5>{{request.user.username}}</h5>
                             </div>
                         </div>
-                        <div class="p-4 text-black" style="background-color: #f8f9fa;">
-                            <div class="d-flex justify-content-end text-center py-1">
-                                <div>
-                                    <p class="mb-1 h5">{% trans "number of purchased tools" %}</p>
-                                    <p class="small text-muted mb-0">{{ user.purchase_tool.count }}</p>
-                                </div>
+                        <div class="p-4 text-black dark:bg-slate-900 bg-gray-300">
+                            <!-- d-flex justify-content-end -->
+                            <div class=" text-center py-1" style="width: 70%; margin: 31px auto -12px auto;">
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% comment %} <div class="form-outline">
+                                        <input type="email" id="email" class="form-control text-slate-900 dark:text-gray-50" name="email" value="{% if user_form.email.value %}{{ user_form.email.value }}{% endif %}" required/>
+                                        <label class="form-label dark:text-gray-50" for="email">{% trans "email" %}</label>
+                                    </div>  {% endcomment %}
+                                    <div class="form-outline">
+                                        <input type="text" id="username" class="form-control text-slate-900 dark:text-gray-50" name="username" value="{% if user_form.username.value %}{{ user_form.username.value }}{% endif %}" required/>
+                                        <label class="form-label dark:text-gray-50" for="username">{% trans "username" %}</label>
+                                    </div>
+                                    <div class="form-upload" style="display: flex; flex-direction: column;">
+                                        <label class="form-label dark:text-gray-50" for="id_image" style="text-align:start">{% trans "photo" %}:</label>
+                                        <input type="file" class="form-control text-slate-900 dark:text-gray-900" id="id_image" name="photo" value="{% if profile_form.photo.value %}{{ profile_form.photo.value }}{% endif %}" required/>
+                                    </div>
+                                    <input type="submit" class="btn btn-success" name="{% trans "Save" %}"/>
+                                </form>
                             </div>
                         </div>
-                        <div class="card-body p-4 text-black">
+                        <div class="card-body p-4 dark:bg-slate-900 bg-slate-50">
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <p class="lead fw-normal mb-0">{% trans "Your tools" %}</p>
+                                <p class="lead fw-normal mb-0 dark:text-slate-50 text-slate-900">{% trans "Your tools" %}</p>
                             </div>
                             <div class="card-box-profile">
-                                {% for tool in user.purchase_tool.all %}
+                                {% for tool in purchased_tools %}
                                     <div class="card">
                                         <a href="{% url 'tool_detail' tool.slug %}">
                                             <div class="bg-image hover-zoom">
@@ -50,9 +63,9 @@
                                                 {% endif %}
                                             </div>
                                         </a>
-                                        <div class="card-body card-content">
-                                            <h5 class="card-title">{{ tool.tool_name }}</h5>
-                                            <div class="card-count-price">
+                                        <div class="card-body card-content dark:bg-slate-700 bg-slate-50">
+                                            <h5 class="card-title dark:text-slate-50 text-zinc-900">{{ tool.tool_name }}</h5>
+                                            {% comment %} <div class="card-count-price">
                                                 <p class="card-text">${{ tool.price }}</p>
                                                 <span>
                                                     {% trans "Stock" %}
@@ -64,9 +77,9 @@
                                                         </span>
                                                     {% endif %}
                                                 </span>
-                                            </div>
+                                            </div> {% endcomment %}
                                             <div class="btn-admin">
-                                                <a class="btn btn-info" href="{% url 'download_exe' tool.id %}">{% trans "Download" %}</a>
+                                                <a class="btn btn-info" style="width:100%" href="{% url 'download_exe' tool.id %}">{% trans "Download" %}</a>
                                             </div>
                                         </div>
                                     </div>

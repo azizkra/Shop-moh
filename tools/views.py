@@ -4,8 +4,10 @@ from django.utils.translation import get_language, activate, gettext_lazy
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect,HttpResponse
-from .models import Tool, CoinBaseProcess
+from .models import Tool, type_tool, CoinBaseProcess
+from account.models import Profile
 from django.contrib import messages
 from .form import ToolForm
 import json
@@ -24,8 +26,6 @@ def search_tool(request):
     return render(request, 'tools/search_results.html', context)
 
 
-
-
 def display_tool(request):
     trans = translate(language='ar')
     tools = Tool.objects.all()
@@ -41,9 +41,21 @@ def translate(language):
         activate(cur_language)
     return text
 
+# def switch_language(request):
+#     if request.method == 'POST':
+#         language = request.POST.get('language',  'en') # 'en' is the default language (English)
+#         if language in ['en', 'tr', 'ru']: # Ensure the language is one of the available languages
+#             print(f"Switching language to {language}")
+#             request.session['django_language'] = language
+    
+#     referring_page = request.META.get('HTTP_REFERER', '/') # Get the referring page or use the homepage as a fallback
+#     print(f"Redirecting to {referring_page}")
+#     return redirect(referring_page)
+
 @staff_member_required
 @login_required()
 def add_Tool(request):
+    type_tools = type_tool.objects.all()
     if request.method == 'POST':
         form = ToolForm(request.POST, request.FILES)
         if form.is_valid():
@@ -51,16 +63,47 @@ def add_Tool(request):
             tool.username = request.user
             tool.save()
             messages.success(request, _('Tool added successfully'))
+            # #حدد نوع الأداة
+            # tool_type = form.cleaned_data.get('type_of_tool')
+            
+            # # أعد توجيه المستخدم إلى القالب المناسب بناءً على نوع الأداة
+            # if tool_type == 'smtp':
+            #     return redirect('smtp_template')
+            # elif tool_type == 'sender':
+            #     return redirect('sender_template')
+            # elif tool_type == 'shell':
+            #     return redirect('shell_template')
             return redirect('display_tool')
-            # return redirect('tool-detail', pk=tool.pk)
+            
         else:
+            print(form.errors)
             messages.error(request, _('try again'))
             return redirect('add_tool')
     else:
         form = ToolForm()
     
-    context={'form':form}
+    context={
+        'form':form,
+        'type_tools':type_tools,
+    }
     return render(request, 'tools/tool_form.html', context)
+
+
+def smtp_template(request):
+    tools = Tool.objects.filter(type_of_tool__name='smtp')
+    context={'tools':tools}
+    return render(request, 'tools/temp_tool/smtp_template.html', context)
+
+def sender_template(request):
+    tools = Tool.objects.filter(type_of_tool__name='sender')
+    context={'tools':tools}
+    return render(request, 'tools/temp_tool/sender_template.html', context)
+
+def shell_template(request):
+    tools = Tool.objects.filter(type_of_tool__name='shell')
+    context={'tools':tools}
+    return render(request, 'tools/temp_tool/shell_template.html', context)
+
 
 def tool_detail(request, slug):
     tool = get_object_or_404(Tool, slug=slug)
@@ -78,7 +121,7 @@ def update_Tool(request, pk):
             form.save()
             messages.success(request, _('Tool updated successfully'))
             return redirect('display_tool')
-            # return redirect('tool-detail', pk=tool.pk)
+        
         else:
             messages.error(request, _('try again'))
             return redirect('update_tool')
@@ -114,13 +157,13 @@ def Coinbase_Payment(request, *args, **kwargs):
     if product_info:
         product_info = product_info[0]
         price = product_info.price
-        # user = request.user.email
+        user = request.user.email
         api_key = 'f0cecb79-a4b2-436f-a131-b215cbe6fd44'
         url = 'https://api.commerce.coinbase.com/charges'
         
         data['meta_data'] = {
             'id': id,
-            # 'customer': user
+            'customer': user
         }
         data['name'] = f'Buy {product_name} With {price}'
         data['description'] = 'Sellix Shop'
@@ -139,7 +182,10 @@ def Coinbase_Payment(request, *args, **kwargs):
         
         response = requests.post(url=url, data=json.dumps(data), headers=headers)
         confirmed_data = json.loads(response.text)
-        payment_url = confirmed_data['data']['hosted_url']
+        try:
+            payment_url = confirmed_data['data']['hosted_url']
+        except KeyError:
+            payment_url = None # or set a default value
         
         return HttpResponseRedirect(payment_url)
     else:
@@ -184,6 +230,15 @@ def coinbase_postback(request):
                                 product_id=product_id
                             )
                             # after customer purchase order send notification with tool data 
+                            try:
+                                user = User.objects.get(email=customer)
+                                user_profile = Profile.objects.get(user=user)
+                                user_profile.purchased_tools.add(product_info)
+                                
+                            except User.DoesNotExist:
+                                error = _("User does not exist")
+                            except user_profile.DoesNotExist:
+                                error = _("User profile does not exist")
                             
                             # if you need to send email
                             
@@ -194,3 +249,17 @@ def coinbase_postback(request):
             else:
                 error = _("Duplicate ipn")
     return HttpResponse('ok')
+
+
+
+
+
+def purchaesd_emails(request):
+    # Get all users who have purchased any tool
+    user_with_purchased_tools = User.objects.filter(profile__purchased_tools__isnull=False).distinct()
+    
+    # Get the emails of those users
+    emails_of_users_with_purchased_tools = user_with_purchased_tools.values_list('email', flat=True)
+    
+    context={'emails': emails_of_users_with_purchased_tools}
+    return render(request, 'registration/purchased_emails.html', context)

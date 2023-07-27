@@ -17,6 +17,7 @@ from .views import (
                         
                         cancel_view,
                         success,
+                        
                     )
 
 urlpatterns = [
@@ -39,4 +40,6 @@ urlpatterns = [
     
     path('cancel/', cancel_view, name='cancel_url'),
     path('success/', success, name='redirect_url'),
+    
+    
 ]

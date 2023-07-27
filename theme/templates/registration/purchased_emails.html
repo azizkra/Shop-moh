@@ -1,0 +1,16 @@
+{% extends 'base_theme.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>List of Emails of Users Who Have Purchased a Tool</h1>
+
+<ul>
+    {% for email in emails %}
+        <li>{{ email }}</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}

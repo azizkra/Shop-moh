@@ -22,7 +22,9 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
 		<!-- lazysizes -->
         <script src="{% static 'js/lazysizes.min.js' %}" defer></script>
-		{% block stylecss %}
+		
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        {% block stylecss %}
         
         {% endblock stylecss %}
 	</head>
@@ -67,5 +69,12 @@
                 lazysizes.init();
             });
         </script>
+
+        <!-- ZOHO -->
+        <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siq40fa15a827ab961f14ab64916082a294", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+        {% block script %}
+        
+        {% endblock script %}
+
 	</body>
 </html>

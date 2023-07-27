@@ -6,50 +6,56 @@
 {% block content %}
 
 
+{% include 'other/topnav.html' %}
+{% include 'other/search.html' %}
+
+
 <!-- start Card  -->
 <div class="container">
     {% if tools %}
-        <div class="card-box">
-            {% for tool in tools %}
-                {% if tool.is_visible %}
-                    <div class="card">
+    <div class="card-box">
+        {% for tool in tools %}
+            {% if tool.is_visible %}
+                <div class="card">
+                        <a href="{% url 'tool_detail' tool.slug %}">
                             <div class="bg-image hover-zoom">
                                 {% if tool.image %}
-                                    <img class="card-img-top lazyload" data-src="{{ tool.image.url }}" alt="Lazy-loaded Image">
+                                    <img class="card-img-top lazyload" data-src="{{ tool.image.url }}" alt="{{ tool.tool_name }}">
                                 {% else %}
-                                    <img class="card-img-top lazyload" src="{% static 'img/default-product-img.jpg' %}" alt="Lazy-loaded Image">
+                                    <img class="card-img-top lazyload" src="{% static 'img/default-product-img.jpg' %}" alt="{{ tool.tool_name }}">
                                 {% endif %}
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ tool.tool_name }}</h5>
-                                <div class="card-count-price">
-                                    <p class="card-text">${{ tool.price }}</p>
-                                    <span>
-                                        {% trans "Stock" %}
-                                        {% if tool.quantity > 10 %}
-                                            <i class="fa-solid fa-infinity"></i>
-                                        {% else %}
-                                            <span>
-                                                {{ tool.quantity }}
-                                            </span>
-                                        {% endif %}
-                                    </span>
+                        </a>
+                        <div class="card-body card-content dark:bg-slate-700 bg-gray-100">
+                            <h5 class="card-title dark:text-gray-100 text-slate-900">{{ tool.tool_name }}</h5>
+                            <div class="card-count-price">
+                                <p class="card-text dark:text-gray-100 text-slate-900">${{ tool.price }}</p>
+                                <span class="dark:text-gray-100 text-slate-900">
+                                    {% trans "Stock" %}
+                                    {% if tool.quantity > 10 %}
+                                        <i class="fa-solid fa-infinity dark:text-green-500 text-green-600"></i>
+                                    {% else %}
+                                        <span class="dark:text-green-500 text-green-600">
+                                            {{ tool.quantity }}
+                                        </span>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            {% if request.user.is_superuser %}
+                                <div class="btn-admin">
+                                    <a class="btn btn-info" href="{% url 'update_tool' tool.id %}">{% trans "update" %}</a>
+                                    <a class="btn btn-danger" href="{% url 'delete_tool' tool.id %}">{% trans "delete" %}</a>
                                 </div>
-                                {% if request.user.is_superuser %}
-                                    <div class="btn-admin">
-                                        <a class="btn btn-info" href="{% url 'update_tool' tool.id %}">{% trans "update" %}</a>
-                                        <a class="btn btn-danger" href="{% url 'delete_tool' tool.id %}">{% trans "delete" %}</a>
-                                    </div>
-                                {% endif %}
-                            </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-            <!-- Add more cards here -->
-        </div>
+                            {% endif %}
+                        </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <!-- Add more cards here -->
+    </div>
     {% else %}
         <div class="not-found">
-            <p>{% trans "No results found." %}</p>
+            <p class="dark:text-slate-50 text-slate-900">{% trans "No results found." %}</p>
         </div>
     {% endif %}
 </div>

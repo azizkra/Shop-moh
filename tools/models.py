@@ -5,9 +5,15 @@ from datetime import timedelta
 from django.utils.text import slugify
 # Create your models here.
 
+class type_tool(models.Model):
+    name = models.CharField(max_length=250)
+    
+    def __str__(self):
+        return self.name
 
 class Tool(models.Model):
     tool_name = models.CharField(max_length=350)
+    type_of_tool = models.ForeignKey(type_tool, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True, blank=True)
     image = models.ImageField(upload_to='tools/images')
     rating = models.FloatField(default=1)

@@ -11,6 +11,8 @@ from .models import Profile
 from tools.models import Tool
 from django.core.mail import send_mail
 from django.http import HttpResponse, Http404
+from django.contrib.auth.models import User
+import os
 # Create your views here.
 
 def register(request):
@@ -59,7 +61,6 @@ def user_login(request):
 
 @login_required
 def edit_profile(request):
-    # user_tool = Tool.objects.filter(username=request.user)
     if request.method == 'POST':
         user_form = UserEditForm(data=request.POST, instance=request.user)
         profile_form = ProfileEditForm(data=request.POST, files=request.FILES, instance=request.user.profile)
@@ -78,10 +79,34 @@ def edit_profile(request):
     context={
             'user_form':user_form,
             'profile_form':profile_form,
-            # 'user_tool':user_tool,
         }
     return render(request, 'registration/edit_profile.html', context)
 
+@login_required
+def edit_profile(request):
+    user = request.user
+    user_profile = Profile.objects.get(user=user)
+    purchased_tools = user_profile.purchased_tools.all()
+    
+    # Set default form instances for GET request or invalid POST data
+    user_form = UserEditForm(instance=request.user)
+    profile_form = ProfileEditForm(instance=request.user.profile)
+    if request.method == 'POST':
+        user_form = UserEditForm(data=request.POST, instance=request.user )
+        profile_form = ProfileEditForm(request.POST, request.FILES, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            # Redirect to a success page after successful form submission
+            return redirect('edit_profile')
+        
+    context={
+        'user_form': user_form,
+        'profile_form': profile_form,
+        'user': user,
+        'purchased_tools': purchased_tools
+    }
+    return render(request, 'registration/edit_profile.html', context)
 
 @login_required()
 def change_password(request):
@@ -159,13 +184,20 @@ def download_exe(request, tool_id):
     if request.user == tool.username or tool.is_purchased_by(request.user):
         # Allow the user to download the tool
         file_path = tool.upload_tool.path
-        with open(file_path, 'rb') as file:
-            response = HttpResponse(file.read(), content_type='application/octet-stream')
-            response['Content-Disposition'] = f'attachment; filename="{tool.upload_tool.name}"'
-            return response
+        try:
+            with open(file_path, 'rb') as file:
+                response = HttpResponse(file.read(), content_type='application/octet-stream')
+                response['Content-Disposition'] = f'attachment; filename="{os.path.basename(file_path)}"'
+                return response
+        except FileNotFoundError:
+            raise Http404(_('File not found'))
     else:
         # Redirect or show an error message indicating that the tool is not accessible
         # to the user
         error_message= _('You do not have permission to download this tool.')
         context={'error_message':error_message}
         return render(request, 'registration/profile_edit.html', context)
+    
+    
+    
+

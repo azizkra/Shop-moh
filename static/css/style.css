@@ -29,7 +29,7 @@ body {
 
 /* ! Card */
 .card-box {
-    padding-top: 70px;
+    padding: 70px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -127,6 +127,7 @@ body {
     .card-box-profile {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
