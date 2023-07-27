@@ -21,7 +21,7 @@ SECRET_KEY = 'django-insecure-hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['*']
+ALLOWED_HOSTS =  ['web-production-63c2.up.railway.app', '127.0.0.1:8000']
 
 
 # Application definition
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 # TAILWIND
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = ["127.0.0.1",]
+INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
