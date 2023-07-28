@@ -52,7 +52,11 @@ INSTALLED_APPS = [
 ]
 
 # TAILWIND
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+if DEBUG:
+    NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+else:
+    NPM_BIN_PATH = '/usr/local/bin/npm'
+
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
 
