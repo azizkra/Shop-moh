@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'theme.apps.ThemeConfig',
     'django.contrib.staticfiles',
     
     'tools.apps.ToolsConfig',
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     
     # tailwind css Django apps
     'tailwind',
-    'theme',
+    
     'django_browser_reload',
     
     # for trans
