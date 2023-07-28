@@ -69,6 +69,7 @@ MIDDLEWARE = [
     
     
 ]
+CSRF_TRUSTED_ORIGINS = ['web-production-63c2.up.railway.app']
 
 ROOT_URLCONF = 'mysite.urls'
 # CSRF_COOKIE_SECURE = True
@@ -82,6 +83,8 @@ ROOT_URLCONF = 'mysite.urls'
 
 # # # Enable HSTS preload
 # SECURE_HSTS_PRELOAD = True
+
+
 
 TEMPLATES = [
     {
