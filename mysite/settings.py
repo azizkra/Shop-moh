@@ -65,22 +65,21 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     
-    
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-# Set the HSTS header for 1 year (recommended value)
-SECURE_HSTS_SECONDS = 31536000
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# # Set the HSTS header for 1 year (recommended value)
+# SECURE_HSTS_SECONDS = 31536000
 
-# Include subdomains in HSTS policy
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# # Include subdomains in HSTS policy
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-# Enable HSTS preload
-SECURE_HSTS_PRELOAD = True
+# # Enable HSTS preload
+# SECURE_HSTS_PRELOAD = True
 
 TEMPLATES = [
     {
