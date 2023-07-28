@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j'
+SECRET_KEY = 'hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -55,22 +55,32 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # for trans
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    "django.middleware.security.SecurityMiddleware",
     # for static files in Globale
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     
-    "django_browser_reload.middleware.BrowserReloadMiddleware",    
+    
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+# Set the HSTS header for 1 year (recommended value)
+SECURE_HSTS_SECONDS = 31536000
+
+# Include subdomains in HSTS policy
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# Enable HSTS preload
+SECURE_HSTS_PRELOAD = True
 
 TEMPLATES = [
     {
