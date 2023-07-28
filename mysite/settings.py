@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'tailwind',
     
     'django_browser_reload',
-    
     # for trans
     'rosetta',
+    'corsheaders'
     
 ]
 # TAILWIND
@@ -61,6 +61,7 @@ MIDDLEWARE = [
     # for static files in Globale
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
