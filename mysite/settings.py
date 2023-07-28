@@ -56,6 +56,7 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
 
 MIDDLEWARE = [
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.security.SecurityMiddleware",
     # for static files in Globale
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -66,7 +67,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -146,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
 
 TIME_ZONE = 'UTC'
 
