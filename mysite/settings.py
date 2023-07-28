@@ -32,44 +32,44 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'theme.apps.ThemeConfig',
     'django.contrib.staticfiles',
-    
+    # Django apps
+    'theme.apps.ThemeConfig',
     'tools.apps.ToolsConfig',
     'account.apps.AccountConfig',
     
+    # 3rd party libraries
     # 'social_django',
     # 'django_extensions',
+    # 'corsheaders',
     
     # tailwind css Django apps
     'tailwind',
-    
     'django_browser_reload',
+    
     # for trans
     'rosetta',
-    # 'corsheaders',
-    
 ]
+
 # TAILWIND
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
 
 MIDDLEWARE = [
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
-    "django.middleware.security.SecurityMiddleware",
-    # for static files in Globale
+    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    # "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    
-    
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Added by me
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
+
 CSRF_TRUSTED_ORIGINS = ['https://web-production-63c2.up.railway.app']
 
 ROOT_URLCONF = 'mysite.urls'
@@ -117,6 +117,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -127,7 +128,6 @@ DATABASES = {
         'PORT': '6386',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -152,13 +152,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LANGUAGES = (
+    ('en', _('English')),
+    # ('ar', _('Arabic')),
+    ('tr', _('Türkiye')),
+    ('ru', _('Russia')),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -169,6 +180,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT ='staticfiles/'
+
 # for static files in Globale
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -191,15 +203,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # django_heroku.settings(locals())
-
-LANGUAGE_CODE = 'en'
-
-LANGUAGES = (
-    ('en', _('English')),
-    # ('ar', _('Arabic')),
-    ('tr', _('Türkiye')),
-    ('ru', _('Russia')),
-)
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
-)
