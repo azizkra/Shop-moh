@@ -21,7 +21,7 @@ SECRET_KEY = 'hf2yo5^itx^7x*%@hjm9(fbph&_)i%8rb)$qu0+su+v_p$ex#j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['*',]
+ALLOWED_HOSTS =  ['127.0.0.1', 'web-production-63c2.up.railway.app']
 
 
 # Application definition
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     # for trans
     'rosetta',
-    'corsheaders'
+    # 'corsheaders',
     
 ]
 # TAILWIND
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     # for static files in Globale
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    # "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -70,7 +70,7 @@ MIDDLEWARE = [
     
     
 ]
-CSRF_TRUSTED_ORIGINS = ['web-production-63c2.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-63c2.up.railway.app']
 
 ROOT_URLCONF = 'mysite.urls'
 # CSRF_COOKIE_SECURE = True
