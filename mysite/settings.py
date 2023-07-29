@@ -182,11 +182,11 @@ LOCALE_PATHS = [
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-else:
-    # for static files in Globale
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+# for static files in Globale
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     
 STATIC_ROOT ='staticfiles/'
 
