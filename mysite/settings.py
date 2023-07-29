@@ -49,17 +49,19 @@ INSTALLED_APPS = [
     
     # for trans
     'rosetta',
+    
+    'storages'
 ]
 
 # TAILWIND
-if DEBUG:
-    NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
-else:
-    NPM_BIN_PATH = '/usr/local/bin/npm'
+
 
 TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = ["127.0.0.1", 'web-production-63c2.up.railway.app']
+INTERNAL_IPS = ["127.0.0.1",]
 
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
+    
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -180,13 +182,15 @@ LOCALE_PATHS = [
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+else:
+    # for static files in Globale
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    
 STATIC_ROOT ='staticfiles/'
 
-# for static files in Globale
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -199,6 +203,30 @@ EMAIL_HOST_USER = 'azizkrayyem7@gmail.com'
 EMAIL_HOST_PASSWORD = 'azizkrayyem1234567890@@'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# # s3 BUCKETS CONFIG
+# AWS_ACCESS_KEY_ID = ''
+# AWS_SECRET_ACCESS_KEY = ''
+# AWS_STORAGE_BUCKET_NAME = 'aziz-shop'
+
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>PUT</AllowedMethod>
+        <AllowedMethod>POST</AllowedMethod>
+        <AllowedMethod>DELETE</AllowedMethod>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
+'''
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
